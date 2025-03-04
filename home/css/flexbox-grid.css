@@ -1,0 +1,259 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    overflow-x: hidden; 
+    background: linear-gradient(to bottom, #000033, #000066, #000099); 
+    color: #eee; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+    max-width: 800px;
+    text-align: center;
+    backdrop-filter: blur(5px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+#profile-image {
+    width: 150px;
+    height: auto;
+    display: block; 
+    margin: 0 auto 20px; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #ccf;
+    margin-bottom: 15px;
+}
+
+p, ul, table {
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px #000; 
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: rgba(50, 100, 150, 0.6); 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    min-width: 120px; 
+    text-align: center;
+}
+
+button:hover {
+    background-color: rgba(70, 120, 170, 0.8);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(3px);
+}
+
+.popup-content {
+    background-color: rgba(20, 20, 50, 0.9); 
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.hidden-content {
+    display: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ddd;
+    cursor: pointer;
+    text-shadow: none;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #eee;
+}
+
+table th,
+table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: rgba(50, 100, 150, 0.6);
+    color: white;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease; 
+}
+
+.carousel-button {
+    background-color: rgba(50, 100, 150, 0.6);
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(70, 120, 170, 0.8);
+}
+
+.prev-button {
+    position: absolute;
+    left: 10px;
+}
+
+.next-button {
+    position: absolute;
+    right: 10px;
+}
+
+.image-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.survey-form {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+ .survey-form h3 {
+    color: #ccf;
+    margin-bottom: 15px;
+}
+
+.survey-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #eee;
+    font-size: 14px;
+}
+
+.survey-form input[type="text"],
+.survey-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #222;
+    color: #eee;
+}
+
+.survey-form textarea {
+    resize: vertical;
+}
+
+.rating {
+    display: flex;
+gap: 5px;
+    margin-bottom: 15px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+}
+
+.rating input:checked ~ label,
+.rating input:hover ~ label {
+    color: #ffcc00;
+}
+
+.submit-button {
+    background-color: rgba(50, 100, 150, 0.6);
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: rgba(70, 120, 170, 0.8);
+}
