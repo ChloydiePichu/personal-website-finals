@@ -128,13 +128,16 @@ const api = axios.create({
 export default {
   data() {
     return {
-      visibleContent: null,
-      suggestions: "",
-      thoughts: "",
-      rating: 5,
-      successMessage: "",
-      images: ["/home/gala.jpg", "/home/pc pic.jpg"],
-      currentImage: 0,
+    visibleContent: null,
+    suggestions: "",
+    thoughts: "",
+    rating: 5,
+    successMessage: "",
+    images: [
+      "/images/gala.jpg", // Root-relative path
+      "/images/pc pic.jpg"  // Root-relative path
+    ],
+    currentImage: 0,
     };
   },
   methods: {
