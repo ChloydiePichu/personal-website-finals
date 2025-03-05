@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Profile</title>
     <link rel="stylesheet" href="css/flexbox-grid.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div id="container">
@@ -60,31 +61,36 @@
             </ul>
         </div>
         
-         <div id="survey" class="hidden-content">
-            <div class="survey-form">
+        <div id="survey" class="hidden-content">
+            <div class="survey-form" v-cloak>
                 <h3>Website Feedback Survey</h3>
+        
                 <label for="suggestions">What changes would you suggest?</label>
-                <textarea id="suggestions" placeholder="Share your suggestions..."></textarea>
-
+                <textarea v-model="suggestions" placeholder="Share your suggestions..."></textarea>
+        
                 <label for="likes">What do you like about this website?</label>
-                <textarea id="likes" placeholder="Share your thoughts..."></textarea>
-
+                <textarea v-model="likes" placeholder="Share your thoughts..."></textarea>
+        
                 <label>Rate the design, colors, and ease of use:</label>
                 <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5">
+                    <input type="radio" id="star5" name="rating" value="5" v-model="rating">
                     <label for="star5">&#9733;</label>
-                    <input type="radio" id="star4" name="rating" value="4">
+                    <input type="radio" id="star4" name="rating" value="4" v-model="rating">
                     <label for="star4">&#9733;</label>
-                    <input type="radio" id="star3" name="rating" value="3">
+                    <input type="radio" id="star3" name="rating" value="3" v-model="rating">
                     <label for="star3">&#9733;</label>
-                    <input type="radio" id="star2" name="rating" value="2">
+                    <input type="radio" id="star2" name="rating" value="2" v-model="rating">
                     <label for="star2">&#9733;</label>
-                    <input type="radio" id="star1" name="rating" value="1">
+                    <input type="radio" id="star1" name="rating" value="1" v-model="rating">
                     <label for="star1">&#9733;</label>
                 </div>
-
-                <button class="submit-button">Submit Feedback</button>
+        
+                <button class="submit-button" @click="submitSurvey">Submit Feedback</button>
+        
+                <p v-if="successMessage" style="color: green;">{{ successMessage }}</p>
             </div>
+        </div>
+        
 
         <div id="goals" class="hidden-content">
             <h2>Goals & Dreams</h2>

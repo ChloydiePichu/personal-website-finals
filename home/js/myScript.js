@@ -42,13 +42,37 @@ buttons.forEach(button => {
             displayBox.innerHTML = contentElements[targetId];
             const submitButton = displayBox.querySelector('.submit-button');
 
-            submitButton.addEventListener('click', () => {
+            submitButton.addEventListener('click', async () => {
                 const suggestions = displayBox.querySelector('#suggestions').value;
                 const likes = displayBox.querySelector('#likes').value;
                 const rating = displayBox.querySelector('input[name="rating"]:checked')?.value;
 
-                alert(`Thank you for your feedback!\nSuggestions: ${suggestions}\nLikes: ${likes}\nRating: ${rating}`);
+                const feedbackData = {
+                    suggestions: suggestions,
+                    likes: likes,
+                    rating: rating
+                };
+
+                try {
+                    const response = await fetch('http://127.0.0.1:5000/submit-feedback', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(feedbackData)
+                    });
+
+                    if (response.ok) {
+                        alert('Thank you for your feedback!');
+                    } else {
+                        alert('Failed to submit feedback. Please try again.');
+                    }
+                } catch (error) {
+                    alert('Error submitting feedback. Check your internet connection.');
+                    console.error('Error:', error);
+                }
             });
+
         } else if (targetId === 'gallery') {
             const galleryContent = `
                 <div class="carousel">
