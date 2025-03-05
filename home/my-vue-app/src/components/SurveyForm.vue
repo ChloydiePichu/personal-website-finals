@@ -152,7 +152,7 @@ export default {
           rating: this.rating,
         });
 
-        if (response.status === 200) {
+        if (response.status === 201) {
           this.successMessage = "Feedback submitted successfully!";
           this.suggestions = "";
           this.thoughts = "";
