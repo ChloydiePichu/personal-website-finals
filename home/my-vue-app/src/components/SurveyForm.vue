@@ -34,7 +34,7 @@ export default {
   methods: {
     async submitSurvey() {
       try {
-        const response = await axios.post("http://127.0.0.1:5000/submit-survey", {
+        const response = await axios.post("https://ominous-space-journey-wr9p4r54qqg2w4w-5000.app.github.dev/submit-survey", {
           suggestions: this.suggestions,
           thoughts: this.thoughts,
           rating: this.rating,
