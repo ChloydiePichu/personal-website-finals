@@ -53,3 +53,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+textarea {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
