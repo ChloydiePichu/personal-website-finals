@@ -133,7 +133,7 @@ export default {
       thoughts: "",
       rating: 5,
       successMessage: "",
-      images: ["gala.jpg", "pc pic.jpg"], // Replace with your image paths
+      images: ["gala.jpg", "pc pic.jpg"],
       currentImage: 0,
     };
   },
@@ -154,7 +154,9 @@ export default {
           this.suggestions = "";
           this.thoughts = "";
           this.rating = 5;
-        }
+        } else {
+          throw new Error("Failed to submit feedback.");
+        } 
       } catch (error) {
         console.error("Error submitting survey:", error);
         this.successMessage = "Failed to submit feedback.";
