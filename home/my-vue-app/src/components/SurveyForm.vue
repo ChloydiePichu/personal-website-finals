@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="container">
-      <img id="profile-image" src="/home/Lechico HDD.jpg" />
+      <img id="profile-image" src="../home/Lechico HDD.jpg" />
       <div id="about-me">
         <h2>About Me</h2>
         <p>Hello, my name is Chloyd! I am 20 years old and I am currently a 2nd year college student at APC.</p>
