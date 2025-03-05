@@ -2,12 +2,14 @@ body {
     font-family: sans-serif;
     margin: 0;
     overflow-x: hidden; 
-    background: linear-gradient(to bottom, #000033, #000066, #000099); 
+    background: url('../galaxy.gif') no-repeat center center fixed;
+    background-size: cover;
     color: #eee; 
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
 }
 
 #container {
