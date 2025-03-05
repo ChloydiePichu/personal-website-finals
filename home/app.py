@@ -14,17 +14,14 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 @app.route('/submit-survey', methods=['POST'])
 def submit_survey():
     try:
-        # Get JSON data from request
         data = request.json
         suggestions = data.get('suggestions')
         thoughts = data.get('thoughts')
         rating = data.get('rating')
 
-        # Ensure required fields are provided
         if not all([suggestions, thoughts, rating]):
             return jsonify({"error": "Missing required fields"}), 400
 
-        # Insert into Supabase
         response = supabase.table("survey_responses").insert({
             "suggestions": suggestions,
             "thoughts": thoughts,
