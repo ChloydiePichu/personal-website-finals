@@ -172,7 +172,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 body {
     font-family: sans-serif;
     margin: 0;
