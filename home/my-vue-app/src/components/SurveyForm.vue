@@ -134,8 +134,8 @@ export default {
     rating: 5,
     successMessage: "",
     images: [
-      "/images/gala.jpg",
-      "/images/pc pic.jpg"  
+      "src/components/images/gala.jpg",
+      "src/components/images/pc pic.jpg"  
     ],
     currentImage: 0,
     };
