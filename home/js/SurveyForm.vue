@@ -1,0 +1,55 @@
+<template>
+  <div>
+    <h2>Website Feedback Survey</h2>
+    <form @submit.prevent="submitSurvey">
+      <label>What changes would you suggest?</label>
+      <textarea v-model="suggestions"></textarea>
+
+      <label>What do you like about this website?</label>
+      <textarea v-model="thoughts"></textarea>
+
+      <label>Rate the design, colors, and ease of use:</label>
+      <select v-model="rating">
+        <option v-for="n in 5" :key="n" :value="n">{{ n }} Stars</option>
+      </select>
+
+      <button type="submit">Submit Feedback</button>
+      <p v-if="successMessage">{{ successMessage }}</p>
+    </form>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      suggestions: "",
+      thoughts: "",
+      rating: 5,
+      successMessage: "",
+    };
+  },
+  methods: {
+    async submitSurvey() {
+      try {
+        const response = await axios.post("http://127.0.0.1:5000/submit-survey", {
+          suggestions: this.suggestions,
+          thoughts: this.thoughts,
+          rating: this.rating,
+        });
+        if (response.status === 200) {
+          this.successMessage = "Feedback submitted successfully!";
+          this.suggestions = "";
+          this.thoughts = "";
+          this.rating = 5;
+        }
+      } catch (error) {
+        console.error("Error submitting survey:", error);
+        this.successMessage = "Failed to submit feedback.";
+      }
+    },
+  },
+};
+</script>
