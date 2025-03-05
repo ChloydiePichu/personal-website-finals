@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     overflow-x: hidden; 
-    background: url('../galaxy.gif') no-repeat center center fixed;
+    background: url('../bluegalaxy.gif') no-repeat center center fixed;
     background-size: cover;
     color: #eee; 
     display: flex;
