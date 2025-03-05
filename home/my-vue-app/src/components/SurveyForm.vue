@@ -134,8 +134,8 @@ export default {
     rating: 5,
     successMessage: "",
     images: [
-      "/images/gala.jpg", // Root-relative path
-      "/images/pc pic.jpg"  // Root-relative path
+      "src/components/images/gala.jpg",
+      "src/components/images/pc pic.jpg"  
     ],
     currentImage: 0,
     };
